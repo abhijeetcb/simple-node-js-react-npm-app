@@ -16,9 +16,8 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'docker build -f Dockerfile -t reactapp .'
-                sh 'docker run -it -p 3006:3006 reactapp:latest'
-            }
+                sh 'npm start'
+              }
         }
 
     }
