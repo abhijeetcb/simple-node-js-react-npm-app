@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:12-alpine'
-            args '-u root:root -p 3006:3006'
+            args '-u root:root -p 3008:3008'
         }
     }
     environment {
@@ -16,7 +16,6 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'kill -9 ` lsof -t -i:3006`'
                 sh 'npm start & sleep 1'
                 sh 'kill.sh'    
               }
