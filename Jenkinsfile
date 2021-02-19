@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'npm start & sleep 1'
+                sh './deliver.sh'
                 sh './kill.sh'    
               }
         }
