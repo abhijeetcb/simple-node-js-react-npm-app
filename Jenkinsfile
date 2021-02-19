@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                sh 'kill -9 ` lsof -t -i:3006`'
                 sh 'npm start & sleep 1'
                 sh 'kill.sh'    
               }
