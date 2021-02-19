@@ -7,8 +7,7 @@ echo 'correctly bundles React in production mode and optimizes the build for'
 echo 'the best performance.'
 
 set -x
-docker build -f Dockerfile -t reactapp .
-docker run -it -p 3006:3006 reactapp
+
 
 set +x
 
